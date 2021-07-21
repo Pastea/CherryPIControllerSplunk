@@ -1,0 +1,27 @@
+<form theme="dark">
+  <label>Download Excel</label>
+  <fieldset submitButton="false">
+    <input type="text" token="sid">
+      <label>Job SID</label>
+    </input>
+    <input type="text" token="filename">
+      <label>Filename</label>
+      <default>Results</default>
+    </input>
+    <input type="dropdown" token="format">
+      <label>Format</label>
+      <choice value="xlsx">XLSX</choice>
+      <choice value="csv">CSV</choice>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Excel Download</title>
+      <html>
+        <a href="/custom/ExcelDownloader/download/excel?sid=$sid$&amp;fileName=$filename$.$format$&amp;fileType=$format$" class="btn-pill" data-set-token="show_table" data-value="show" data-unset-token="show_chart" download="$filename$.$format$">
+          Download
+        </a>
+      </html>
+    </panel>
+  </row>
+</form>
